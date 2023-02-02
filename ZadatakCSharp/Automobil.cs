@@ -25,7 +25,7 @@ namespace ZadatakCSharp
                 godinaProizvodnje = value;
                 if (NaPromjenuGodineProizvodnje != null)
                 {
-                    NaPromjenuGodineProizvodnje(this, new EventArgs());
+                    NaPromjenuGodineProizvodnje(this, new EventArgs()); 
                 }
             }
 
