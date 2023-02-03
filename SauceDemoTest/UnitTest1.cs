@@ -17,7 +17,7 @@ namespace TestProject1
         public void LoginFailed()
         {
             IWebElement element2 = driver.FindElement(By.Id("login-button"));
-     
+
             IWebElement usernameInput = driver.FindElement(By.Name("user-name"));
 
             usernameInput.SendKeys(" ");
@@ -115,6 +115,52 @@ namespace TestProject1
 
         }
 
+        [Test]
+        public void AddToCart()
+        {
+
+            IWebElement element2 = driver.FindElement(By.Id("login-button"));
+            IWebElement passInput = driver.FindElement(By.Id("password"));
+            IWebElement usernameInput = driver.FindElement(By.Id("user-name"));
+            IWebElement element3 = driver.FindElement(By.ClassName("error-message-container"));
+            usernameInput.SendKeys("performance_glitch_user");
+            passInput.SendKeys("secret_sauce");
+            element2.Click();
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
+            IWebElement element4 = driver.FindElement(By.Name("add-to-cart-sauce-labs-backpack"));
+            element4.Click();
+            IWebElement element5 = driver.FindElement(By.ClassName("shopping_cart_link"));
+        }
+
+        [Test]
+        public void LockedOutUser()
+        {
+
+            IWebElement element2 = driver.FindElement(By.Id("login-button"));
+            IWebElement passInput = driver.FindElement(By.Id("password"));
+            IWebElement usernameInput = driver.FindElement(By.Id("user-name"));
+            IWebElement element3 = driver.FindElement(By.ClassName("error-message-container"));
+            usernameInput.SendKeys("locked_out_user");
+            passInput.SendKeys("secret_sauce");
+            element2.Click();
+
+        }
+        [Test]
+        public void ProblemUser()
+        {
+
+            IWebElement element2 = driver.FindElement(By.Id("login-button"));
+            IWebElement passInput = driver.FindElement(By.Id("password"));
+            IWebElement usernameInput = driver.FindElement(By.Id("user-name"));
+            IWebElement element3 = driver.FindElement(By.ClassName("error-message-container"));
+            usernameInput.SendKeys("problem_user");
+            passInput.SendKeys("secret_sauce");
+            element2.Click();
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
+            IWebElement element4 = driver.FindElement(By.Name("add-to-cart-sauce-labs-backpack"));
+            element4.Click();
+            IWebElement element5 = driver.FindElement(By.ClassName("shopping_cart_link"));
+        }
 
         [TearDown]
         public void CleanUp()
