@@ -5,11 +5,13 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZadatakCSharp", "ZadatakCSharp\ZadatakCSharp.csproj", "{59FDB502-CEED-4D98-A388-AB43C3F5F7DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{C0CCDBFA-192A-48DC-A5E6-749088052F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{C0CCDBFA-192A-48DC-A5E6-749088052F0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{E66C3B55-08AA-4F5E-8150-A2763B649FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SauceDemoTest", "SauceDemoTest\SauceDemoTest.csproj", "{1F982F19-AA2C-4833-8055-05C7B509D178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SauceDemoTest", "SauceDemoTest\SauceDemoTest.csproj", "{1F982F19-AA2C-4833-8055-05C7B509D178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWithSpecFlow", "TestWithSpecFlow\TestWithSpecFlow.csproj", "{740EE8F7-D185-468A-B13B-C54A41D35098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1F982F19-AA2C-4833-8055-05C7B509D178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F982F19-AA2C-4833-8055-05C7B509D178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F982F19-AA2C-4833-8055-05C7B509D178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740EE8F7-D185-468A-B13B-C54A41D35098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740EE8F7-D185-468A-B13B-C54A41D35098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740EE8F7-D185-468A-B13B-C54A41D35098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740EE8F7-D185-468A-B13B-C54A41D35098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
