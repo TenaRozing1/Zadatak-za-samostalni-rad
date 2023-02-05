@@ -1,0 +1,44 @@
+- prvi puta sam se susrela sa Seleniumom i nije mi poznat od prije
+- s obzirom da se koristim Google Chrome-om pokušala sam preko njega (prema tutorijalima) pokrenuti test, 
+no iz nekog razloga test se nije mogao pokrenuti i dobivala sam error
+- proučila sam što bi moglo stvarati problem i mislim da je do toga što imam dosta novu verziju Chrome-a 
+(Version 109.0.5414.120) i da još ne postoji driver za nju pa sam za pokretanje testa koristila Edge preglednik s kojim
+nisam imala problema, instalirala sam driver za njega i umjesto IWebDriver driver = new ChromeDriver(); sam
+napisala IWebDriver driver = new EdgeDriver();
+- također koristila sam statement "using OpenQA.Selenium; " koji sam morala dodati na desni klik na kod
+ iznad (IwebDriver) i "using OpenQA.Selenium.Edge;" desnim klikom na EdgeDriver() te zatim na Quick actions and refactoring
+- proučavanjem literature i tutorijala većinom se za početak test pise unutar main funkcije u kreiranoj konzolnoj aplikaciji
+(Console App .NET Framework) koju sam za početak i odabrala, kasnije sam test napisala u UNit test .NET Framework
+- unutar main funkcije ispisala sam u konzolu da se test pokreće te se pri pokretanju testa na "Start" ili F5
+prvo prikaže ta poruka, a zatim se pokrene browser
+- kako bi se mogla pokrenuti neka određena stranica potrebno je dodati url za tu stranicu na sljedeći način:
+driver.Navigate().GoToUrl("https://www.google.com/");, kao što se vidi koristila sam Google početnu stranicu
+- zatim je prema tutorijalu trebalo idetificirati kako doći do tražilice, desnim klikom na tražilicu sam odabrala inspect
+te našla atribute tražilice, to mogu biti klasa, xpath, ime id itd., odabrala sam "Name" koje je "q" te definirala i
+inicijalizirala na idući način IWebElement ele = driver.FindElement(By.Name("q"));
+- kako bih prema tutorijalu u pronađenu tražilicu "ele" mogla upisati određeni tekst za pretragu koristila sam
+ metodu Sendkeys() koja omogućava automatski upis sadržaja u textbox, te sam upisala javatpoint tutorials
+- samim upisom ne dogodi se ništa osim popunjavanjem tražilice tekstom
+- za pretragu teksta kreiran je novi IWebElement ele1 te je pomoću metode FindElement prema imenu
+ pronađen button za pretraživanje: IWebElement ele1 = driver.FindElement(By.Name("btnK"));
+- za klik na button ele1 koristi se metoda ele1.Click();
+- test se zaustavlja s linijom koda driver.Close(); gdje se poziva funkcija za zatvaranje testa. tj prekidanje drivera
+- u konzoli se ispisuje poruka za završetak testa: Console.Write("Success! Test case ended"); čime testiranje završava
+- na tri mjesta u kodu koristila sam funkciju Sleep() za Thread.Sleep() koja obustavlja neki thread odnosno "nit" na 
+određeno vrijeme izraženo u milisekundama
+- opisani dijelovi koda napisani su u konzolnoj aplikaciji, isti takav kod napisala sam u NUnit testu koji se piše na malo drugačiji način
+-kreirala sam metodu Initialize() unutar koje samo pokrećem browser tj. koja uvijek vodi na početnu stranicu
+- zatim su kreirane metode koje odrađuju nekakav test, test se najbrže pokreće desnim klikom unutar metode koju želimo 
+testirati i bira se Debug tests nakon čega se odabrani test pokreće i ako nema nikakvih errora on se izvršava do kraja, odnosno test se ne izvrši, ali
+se izvrši funkcija za zatvaranje testa unutar [TearDown] atributa.
+- test se prekida na liniji koda koja ima grešku i ispisuje se exception
+- kada se test pise na ovaj način IWebDriver se deklarira kao globalna varijabla
+- kako bi se test mogao pokrenuti kod se pise unutar atributa [Test] koji koristi NUnit.Framework referencu
+- pomoću [Test] atributa mogu se izvršiti samo metode unutar njega, stoga se moraju definirati i drugi atributi
+- iznad metode Intitialize() definira se atribut [SetUp] koji se pokreće trenutak prije pokretanja testa
+- [TearDown] atribut se definira iznad metode koja zatvara test i pokreće se trenutak nakon završetka testa
+- metoda unutar [TearDown] atributa bit će pozvana čak i ako se pojavi exception za vrijeme izvršavanja testa
+- na početku sam zaboravila napomenuti da mi se test u Chrome browseru htio pokrenuti samo kada sam driver skinula na računalo
+i hardkodirala putanju do njega unutar ChromeDriver(), ali to mi se nije činio kao pravilan način pa sam se odlučila radit test u Edge
+browseru
+
